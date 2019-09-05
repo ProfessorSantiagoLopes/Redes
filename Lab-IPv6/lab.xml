@@ -1,0 +1,63 @@
+<lab>
+    <scene>
+        <dimension width="1000" height="1000" />
+        <items>
+            <virtualmachines>
+                <virtualmachine x="34" y="332" id="PC2" >
+                    <label x="0" y="52" />
+                    <multilabel x="0" y="64" />
+                    <plugins/>
+                </virtualmachine>
+                <virtualmachine x="39" y="85" id="PC1" >
+                    <label x="0" y="52" />
+                    <multilabel x="0" y="64" />
+                    <plugins/>
+                </virtualmachine>
+                <virtualmachine x="331" y="202" id="ROUTER" >
+                    <label x="0" y="52" />
+                    <multilabel x="0" y="64" />
+                    <plugins/>
+                </virtualmachine>
+            </virtualmachines>
+            <collisiondomains>
+                <collisiondomain x="339" y="93" id="REDEA" >
+                    <label x="0" y="35" />
+                    <multilabel x="0" y="50" />
+                    <plugins/>
+                </collisiondomain>
+                <collisiondomain x="339" y="337" id="REDEB" >
+                    <label x="0" y="35" />
+                    <multilabel x="0" y="50" />
+                    <plugins/>
+                </collisiondomain>
+            </collisiondomains>
+            <links>
+                <link collisiondomain="REDEA" virtualmachine="PC1" interface="eth0" >
+                    <label/>
+                    <plugins>
+                        <plugin name="IPv4" />
+                    </plugins>
+                </link>
+                <link collisiondomain="REDEA" virtualmachine="ROUTER" interface="eth0" >
+                    <label/>
+                    <plugins>
+                        <plugin name="IPv4" />
+                    </plugins>
+                </link>
+                <link collisiondomain="REDEB" virtualmachine="PC2" interface="eth0" >
+                    <label/>
+                    <plugins>
+                        <plugin name="IPv4" />
+                    </plugins>
+                </link>
+                <link collisiondomain="REDEB" virtualmachine="ROUTER" interface="eth1" >
+                    <label/>
+                    <plugins>
+                        <plugin name="IPv4" />
+                    </plugins>
+                </link>
+            </links>
+        </items>
+    </scene>
+    <excluded/>
+</lab>

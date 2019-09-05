@@ -1,0 +1,17 @@
+###
+# This file is createb by Visual Netkit 1.4 version
+# http://www.netkit.org ~ http://code.google.com/p/visual-netkit/
+#
+/sbin/ifconfig eth0 10.0.1.10 netmask 255.255.255.0 broadcast 10.0.1.255 ## 'REDEB' collision domain ##
+/sbin/ifconfig eth0 up ## 'REDEB' collision domain ##
+route add default gw 10.0.1.1
+
+modprobe ipv6
+sysctl -w net.ipv6.conf.default.forwarding=1
+
+echo "auto sit0">>/etc/network/interfaces
+echo "iface sit0 inet6 static">>/etc/network/interfaces
+echo "address 2002:0a00:010a::1">>/etc/network/interfaces
+echo "netmask 16">>/etc/network/interfaces
+
+ifup sit0

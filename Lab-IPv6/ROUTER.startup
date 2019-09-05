@@ -1,0 +1,8 @@
+###
+# This file is createb by Visual Netkit 1.4 version
+# http://www.netkit.org ~ http://code.google.com/p/visual-netkit/
+#
+/sbin/ifconfig eth1 10.0.1.1 netmask 255.255.255.0 broadcast 10.0.1.255 ## 'REDEB' collision domain ##
+/sbin/ifconfig eth0 10.0.0.1 netmask 255.255.255.0 broadcast 10.0.0.255 ## 'REDEA' collision domain ##
+/sbin/ifconfig eth0 up ## 'REDEA' collision domain ##
+/sbin/ifconfig eth1 up ## 'REDEB' collision domain ##
